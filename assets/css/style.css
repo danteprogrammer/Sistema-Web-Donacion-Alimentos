@@ -2,13 +2,13 @@
 
 :root
 {
-	--theme-color: #3f51b5;
+	--theme-color: #12AF8C;
 }
 
 body
 {
 	height: 100vh;
-	background-color: #f2f2f2;
+	background-color: #CDE0DC;
 	font-family: 'Roboto', sans-serif;
 	overflow-x: hidden;
 }
@@ -92,9 +92,79 @@ header .navbar-toggler:focus
 }
 #carousel .carousel-control-prev-icon, #carousel .carousel-control-next-icon
 {
-	transform: scaleX(1.5) scaleY(2);
-	background-color: #000000;
+	transform: scaleX(2) scaleY(2.5);
+	background-color: transparent;
 	cursor: pointer;
+}
+
+/* Indicadores circulares blancos */
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 1;
+}
+
+/* Indicador activo (puedes diferenciarlo si gustas) */
+.carousel-indicators .active {
+  background-color: #c6c6c6;
+}
+
+/* Centrar vertical y horizontalmente el caption */
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px 20px 40px 20px;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 600px;
+  text-align: center;
+  display: inline-flex; /* importante para que no ocupe todo el alto */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/* Estilizar el botón Donar */
+.carousel-caption .btn {
+  background-color: #12AF8C !important;
+  color: #ffffff !important;
+  border: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.carousel-caption .btn:hover {
+  background-color: #ffffff !important;
+  color: #12AF8C !important;
+}
+
+.carousel-caption h2, .carousel-caption p {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 576px) {
+  .carousel-caption {
+    width: 70%;
+	height: 60%;
+    padding: 20px 15px 30px 15px;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.25rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.95rem;
+  }
 }
 
 
@@ -150,3 +220,95 @@ header .navbar-toggler:focus
 	from { right: -100px; }
 	to { right: 0px; }
 }
+
+.about-us-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: calc(100vh - 50px); /* Resta el header */
+	padding: 20px;
+}
+
+.about-us-content {
+	display: flex;
+	flex-direction: row;
+	background-color: transparent;
+	width: 90%;
+	max-width: 1000px;
+	height: 450px;
+}
+
+.about-us-image, .about-us-text {
+	width: 50%;
+	height: 100%;
+}
+
+.about-us-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.about-us-text {
+	background-color: white;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.about-us-text h2 {
+	color: var(--theme-color);
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.about-us-text p {
+	font-size: 1.1rem;
+	line-height: 1.6;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+	.about-us-content {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.about-us-image, .about-us-text {
+		width: 100%;
+		height: auto;
+	}
+
+	.about-us-image img {
+		border-radius: 10px 10px 0 0;
+	}
+
+	.about-us-text {
+		border-radius: 0 0 10px 10px;
+	}
+}
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 50px;
+}
+
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+
